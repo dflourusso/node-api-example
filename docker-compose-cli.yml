@@ -1,0 +1,10 @@
+version: '3.7'
+
+services:
+  cli:
+    image: node:8-alpine
+    command: sh
+    user: '1000'
+    volumes:
+      - ./:/app
+    working_dir: /app

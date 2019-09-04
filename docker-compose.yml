@@ -1,0 +1,11 @@
+version: '3.7'
+
+services:
+  app:
+    image: node:8-alpine
+    command: node_modules/.bin/nodemon server.js
+    ports:
+      - 3000:3000
+    volumes:
+      - ./:/app
+    working_dir: /app
