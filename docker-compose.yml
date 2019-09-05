@@ -3,7 +3,7 @@ version: '3.7'
 services:
   app:
     image: node:8-alpine
-    command: node_modules/.bin/nodemon server.js
+    command: yarn start
     ports:
       - 3000:3000
     volumes:

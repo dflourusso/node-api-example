@@ -1,13 +1,14 @@
-const router = require('express').Router()
+import { Router } from 'express'
+const router = Router()
 
-const authMiddleware = require('../middlewares/auth')
-const adminMiddleware = require('../middlewares/admin')
-const driverMiddleware = require('../middlewares/driver')
+import authMiddleware from '../middlewares/auth'
+import adminMiddleware from '../middlewares/admin'
+import driverMiddleware from '../middlewares/driver'
 
-const auth = require('./auth')
-const admin = require('./admin')
-const drivers = require('./drivers')
-const passengers = require('./passengers')
+import auth from './auth'
+import admin from './admin'
+import drivers from './drivers'
+import passengers from './passengers'
 
 router.use('/auth', auth)
 router.use('/admin', authMiddleware, adminMiddleware, admin)
@@ -22,4 +23,4 @@ router.get('/', (req, res) => {
   })
 })
 
-module.exports = router
+export default router
